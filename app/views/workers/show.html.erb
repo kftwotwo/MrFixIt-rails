@@ -1,7 +1,39 @@
 <h1><%= current_worker.email %>'s claimed jobs:</h1>
 
-<ul>
-<% current_worker.jobs.each do |job| %>
-<li><%= link_to job.title, job_path(job) %></li>
-<% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Job</th>
+      <th>Description</th>
+      <th>Complete</th>
+      <th>Status</th>
+    </tr>
+    <hr>
+  </thead>
+
+  <tbody>
+
+    <% current_worker.jobs.each do |job| %>
+      <tr>
+        <td><%= link_to job.title, job_path(job) %></td> <td><%= job.description %></td>
+        <td>
+          <% if job.completed == false %>
+          <p>Not Yet</p>
+          <% else %>
+          <p>Done!</p>
+          <% end %>
+          <% if job.pending == true %>
+            <p>Pending</p>
+            <% else %>
+            <p></p>
+            <% end %>
+          </td>
+        <% if job.worker_id == nil %>
+          <td><p>Available</p></td>
+        <% else %>
+        <td><%= link_to "Done", job_path(job), method: :delete %> </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

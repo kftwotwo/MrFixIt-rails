@@ -17,5 +17,4 @@ class WorkersController < ApplicationController
       redirect_to new_worker_registration_path
     end
   end
-
 end
