@@ -13,9 +13,16 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.title, job_path(job) %></td> <td><%= job.description %></td> <td><%= job.completed %></td>
+        <td><%= link_to job.title, job_path(job) %></td> <td><%= job.description %></td>
+        <td>
+          <% if job.completed == false%>
+            <p>In progress</p>
+          <% else %>
+            <p>Done</p>
+          <% end %>
+        </td>
         <% if job.worker_id == nil %>
-          <td><p>Available</p></td>
+          <td><p>Available <%= link_to "Claim", job_path(job), :method => "patch" %></p></td>
         <% else %>
         <td><%= Worker.find(job.worker_id).email %></td>
         <% end %>
