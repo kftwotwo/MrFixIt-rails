@@ -11,6 +11,9 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    if params[:pending]
+      @job.update(:pending => true)
+    end
   end
 
   def create
