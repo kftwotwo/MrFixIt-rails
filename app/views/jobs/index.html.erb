@@ -15,12 +15,14 @@
       <tr>
         <td><%= link_to job.title, job_path(job) %></td> <td><%= job.description %></td>
         <td>
-          <% if job.completed == false%>
-            <p>On the List</p>
-          <% elsif job.pending == true%>
+          <% if job.pending == false%>
+            <div id="stuff">
+              <p>On the List</p><p><%= link_to 'Start', job_path(job, pending: true), remote: true %></p>
+            </div>
+            <div id="new_stuff">
+            </div>
+            <% else %>
             <p>Working Process</p>
-          <% else %>
-            <p>Done</p>
           <% end %>
         </td>
         <% if job.worker_id == nil %>

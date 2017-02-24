@@ -12,26 +12,20 @@
   </thead>
 
   <tbody>
-
     <% current_worker.jobs.each do |job| %>
       <tr>
         <td><%= link_to job.title, job_path(job) %></td> <td><%= job.description %></td>
         <td>
-          <% if job.completed == false %>
-          <p>Not Yet</p>
-          <% else %>
-          <p>Done!</p>
-          <% end %>
           <% if job.pending == true %>
-            <p>Pending</p>
-            <% else %>
-            <p></p>
-            <% end %>
-          </td>
+            <p>Started</p>
+          <% else %>
+            <p>Not Started</p>
+          <% end %>
+        </td>
         <% if job.worker_id == nil %>
           <td><p>Available</p></td>
         <% else %>
-        <td><%= link_to "Done", job_path(job), method: :delete %> </td>
+          <td><%= link_to "Done", job_path(job), method: :delete %> </td>
         <% end %>
       </tr>
     <% end %>
