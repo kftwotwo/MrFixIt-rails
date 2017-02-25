@@ -20,7 +20,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       respond_to do |format|
-        format.html { redirect_to jobs_url }
+        format.html { redirect_to jobs_path }
         format.js
       end
     end

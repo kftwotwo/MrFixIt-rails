@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  user = User.create! :email => 'user@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
-  worker = Worker.create! :email => 'worker@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
+user = User.create! :email => 'user@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
+worker = Worker.create! :email => 'worker@epicodus.com', :password => 'testtest', :password_confirmation => 'testtest'
+job = Job.create! :worker_id => '1', :title => 'test', :description => 'testing'
