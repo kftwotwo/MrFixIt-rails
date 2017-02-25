@@ -16,6 +16,12 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'phantomjs'
+  gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :development do
