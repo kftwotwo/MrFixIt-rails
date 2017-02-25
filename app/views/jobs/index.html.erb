@@ -26,11 +26,11 @@
           <% end %>
         </td>
         <% if job.worker_id == nil %>
-          <td id="normal"><p>Available <%= link_to "Claim", job_path(job), :method => "patch", remote: true %></p></td>
+          <td id="<%= job.id %>_normal"><p>Available <%= link_to "Claim", job_path(job), :method => "patch", remote: true %></p></td>
         <% else %>
         <td><%= Worker.find(job.worker_id).email %></td>
         <% end %>
-        <td id="replace"></td>
+        <td id="<%= job.id %>"></td>
       </tr>
     <% end %>
   </tbody>

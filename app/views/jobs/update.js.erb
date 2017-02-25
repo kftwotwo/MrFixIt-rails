@@ -1,2 +1,2 @@
-$('#normal').hide()
-$('#replace').append("<p><%= current_worker.email %></p>")
+$('#<%= @job.id %>_normal').hide()
+$('#<%= @job.id %>').append("<p><%= current_worker.email %></p>")
