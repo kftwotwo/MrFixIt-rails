@@ -50,7 +50,7 @@ describe JobsController do
       expect(response).to redirect_to(jobs_path)
     end
     #
-    it "will create a new payee" do
+    it "will create a new job" do
       post :create, job: FactoryGirl.attributes_for(:job)
       expect(assigns(:job)).to eq(Job.last)
     end
@@ -70,7 +70,7 @@ describe JobsController do
     end
   end
 
-  describe "DELETE payee" do
+  describe "DELETE job" do
     it "renders a 200 response" do
       job = create(:job)
       delete :destroy, id: job
