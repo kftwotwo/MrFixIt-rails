@@ -10,6 +10,8 @@
         2,
         2,
         2,
+        2,
+        2,
         null
       ],
       "/Users/ktwotwo/Dev/MrFixIt-rails/spec/rails_helper.rb": [
@@ -590,6 +592,7 @@
       "/Users/ktwotwo/Dev/MrFixIt-rails/app/models/job.rb": [
         1,
         1,
+        1,
         null
       ],
       "/Users/ktwotwo/Dev/MrFixIt-rails/spec/models/user_spec.rb": [
@@ -603,10 +606,11 @@
         1,
         null,
         1,
-        null,
+        2,
+        2,
         null
       ]
     },
-    "timestamp": 1487982869
+    "timestamp": 1487983156
   }
 }
